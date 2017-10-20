@@ -6,7 +6,7 @@ public class ChristmasDraw {
 
     static String couples[][] = new String[5][2];
 
-    static String[] lastYear = new String[]{
+    static String[] lastYear = new String[]{   // This has last years draw combinations which can't be repeated
             "y4, y2",
             "x3, y5",
             "y5, x1",
@@ -24,11 +24,11 @@ public class ChristmasDraw {
     public static void main(String args[]){
 
         for(int i = 0; i<couples.length; i++){
-            couples[i][0] = "x"+(i+1);
-            couples[i][1] = "y"+(i+1);
+            couples[i][0] = "x"+(i+1);   // the [i] holds the x value and [0] holds the value of 0+1, each time
+            couples[i][1] = "y"+(i+1);  // the [i] holds the y value and [1] holds the value of 0+1, each time
         }
 
-        for(int i = 0; i<couples.length; i++){
+        for(int i = 0; i<couples.length; i++){   // This for loop is for the x values
             while(true){
                 String res = assignMember(couples[i][0], i);
                 if(Arrays.stream(lastYear).anyMatch(x -> x.equals(res))){
@@ -41,7 +41,7 @@ public class ChristmasDraw {
 
         }
 
-        for(int i = 0; i<couples.length; i++){
+        for(int i = 0; i<couples.length; i++){      // This for loop is for the y values
             while(true){
                 String res = assignMember(couples[i][1], i);
                 if(Arrays.stream(lastYear).anyMatch(x -> x.equals(res))){
@@ -60,7 +60,7 @@ public class ChristmasDraw {
 
     }
 
-    public static String assignMember(String from, int index){
+    public static String assignMember(String from, int index){ 
         Random r = new Random();
         int col,row = 0;
 
@@ -75,7 +75,7 @@ public class ChristmasDraw {
             break;
         }
 
-        return from+", "+couples[row][col];
+        return from+", "+couples[row][col];   //Returns the value in row first and column second format
 
     }
 }
