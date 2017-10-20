@@ -7,7 +7,7 @@ public class TriangleOfStars2 {
                 System.out.print("*");
             System.out.println();
         }
-        for(i = 7; i >= 1; i--) {
+        for(i = 7; i >= 1; i--) {       // 7 elements that go down in reverse from 6 til 1
             for(j = 1; j < i ; j++) {
                 System.out.print(j); }
             System.out.println();

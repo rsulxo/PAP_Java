@@ -1,5 +1,3 @@
-import java.awt.*;
-
 public class TriangleOfStars {
     public static void main(String args[]){
         int i;
