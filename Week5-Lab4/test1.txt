@@ -1,0 +1,1 @@
+recursion is the application of a function to its own values to generate an infinite sequence of values . The recursion formula or clause of a definition specifies the progression from one term to the next .
