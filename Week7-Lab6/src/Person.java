@@ -1,28 +1,37 @@
-//import java.util.Date;
-//import java.util.Calendar;
-
 public class Person {
-    //  two instance variables
-    String name;    // stores the name of the person
-    String DoB;     // stores the date of birth
 
-    Person(String name, String DoB) {
-        //constructor to initialise the variables
+    // two instance variables
+    String name;    // stores name of the person
+    String  DoB;    // stores the date of birth
+
+
+    // a constructor to initialise the instance variables
+    Person(String name, String DoB){
+        //DoB format will be = dd/mm/yyyy
         this.name = name;
         this.DoB = DoB;
     }
 
-    int getAge(String Date) {
-        // a method 'age' that takes an argument of type date and
-        // returns the age of the person
-        int yearBorn = Integer.parseInt(DoB, 10);
-        int currentYear = Integer.parseInt(Date, 10);
-        int currentAge = currentYear -= yearBorn;
-        return currentAge;
+    // method 'age' that takes an argument of type Date & returns the age
+    int age(String Date){
+        //you must enter data in this format dd/mm/yyyy - 10 characters in DoB - example 14/11/1997
+
+        int startIndex = 6;  // I need indexes for the parseInt methods
+        int endIndex = 10;  // it wont work otherwise
+
+        int bornYear; // index contains the year because the input dd/mm/yyyy
+        bornYear = Integer.parseInt(DoB, startIndex,endIndex,10);
+
+        int currentYear; // index contains the year because the input dd/mm/yyyy
+        currentYear = Integer.parseInt(Date, startIndex,endIndex,10);
+
+        int currentAge = 0;
+        currentAge = currentYear -= bornYear; //this is an effective way to find out the age
+        return  currentAge;
     }
 
-    public String toString() {
-        // a 'toString' method to return the string representation of the object Person
-        return "Name: "+this.name+" Date of Birth: "+this.DoB+"Age: ";
+    // method to return the string representation of the object Person
+    public String toString(){
+        return "name: " + this.name + " DoB: " + this.DoB;
     }
 }
